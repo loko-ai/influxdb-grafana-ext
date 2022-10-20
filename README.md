@@ -4,7 +4,7 @@ With this extensions you can use Influxdb and Grafana inside Loko ;)
 
 ## Important!
 
-This proejct will mount volumes inside this path:
+This project will mount volumes inside this path:
 ```bash
 /var/opt/loko/influxdb-grafana-ext/
 ```

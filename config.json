@@ -1,7 +1,7 @@
 {
   "side_containers": {
     "influxdb": {
-      "image": "influxdb:2.4",
+      "image": "influxdb:2.4-alpine",
       "ports": {
         "8086": "8086"
       },
@@ -15,7 +15,7 @@
         "8086"
       ],
       "volumes": [
-       "/var/opt/loko/influxdb-grafana-ext/influx-data:/var/lib/influxdb"
+       "/var/opt/loko/influxdb-grafana-ext/influx-data:/var/lib/influxdb2"
        ],
       "gui": {
         "name": "influxdb",
@@ -25,6 +25,14 @@
     },
     "grafana": {
       "image": "grafana/grafana:9.2.1",
+      "environment": {
+        "GF_SECURITY_ADMIN_USER": "admin",
+        "GF_SECURITY_ADMIN_PASSWORD": "admin",
+        "GF_INSTALL_PLUGINS": ""
+      },
+      "volumes": [
+        "/var/opt/loko/influxdb-grafana-ext/grafana-data:/var/lib/grafana"
+      ],
       "ports": {
         "3000": "3000"
       },

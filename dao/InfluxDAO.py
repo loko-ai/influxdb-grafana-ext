@@ -4,10 +4,13 @@ from typing import List
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write_api import SYNCHRONOUS
 
+from utils.logger_utils import logger
+
 
 class InfluxDAO:
     def __init__(self, url='http://localhost:8086', org='influx-org', username='influx-user',
                  password='influx-pass', bucket='influx-bu'):
+        logger.debug(f"INFLUXDB URL:: {url}")
         self.client = InfluxDBClient(url=url, org=org, username=username, password=password)
         self.bucket = bucket
 
@@ -23,6 +26,7 @@ class InfluxDAO:
 
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
         _records = [get_record(row) for row in records]
+        logger.debug(f"Bucket:: {self.bucket}, measurement:: {measurement}")
         write_api.write(bucket=self.bucket, record=_records)
 
     def delete(self, measurement: str, start="1970-01-01T00:00:00Z", stop=None):
@@ -44,7 +48,9 @@ class InfluxDAO:
 if __name__ == '__main__':
     import csv
 
-    data_path = '/home/cecilia/Scaricati/fake_data.csv'
+    data_path = "/home/roberta/old_pc/terna_lib/dati/v3_bis/fake_data.csv"
+
+    # data_path = '/home/cecilia/Scaricati/fake_data.csv'
     influxdao = InfluxDAO()
 
     measurement = 'fake_data'
@@ -57,7 +63,8 @@ if __name__ == '__main__':
         csv_reader = csv.reader(f, delimiter=',')
         cols = next(csv_reader)
         records = [dict(zip(cols, row)) for row in csv_reader]
-        influxdao.save(records, measurement, tags=['Linea', 'Traliccio'], fields=['orario picco'])
+        # print(records)
+        influxdao.save(records, measurement, tags=['Linea', 'Traliccio'], fields=['orario'])
 
     print(influxdao.query())
 

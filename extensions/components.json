@@ -1,1 +1,95 @@
-[{"name": "influxDB", "events": null, "group": "Custom", "description": "", "inputs": [{"id": "input", "label": "input", "service": "", "to": "output"}, {"id": "file_input", "label": "file_input", "service": "files", "to": "file_output"}], "outputs": [{"id": "output", "label": "output"}, {"id": "file_output", "label": "file_output"}], "configured": true, "options": {"group": "Custom", "args": [{"name": "param_example", "type": "text", "label": "Param Example", "helper": "just an example"}], "click": null, "icon": "RiTyphoonFill", "values": {}}, "disabled": false}]
+[
+ {
+  "name": "InfluxDB",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiStackFill",
+  "click": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "save",
+    "label": "Save",
+    "service": "save_data",
+    "to": "save"
+   },
+   {
+    "id": "delete",
+    "label": "Delete",
+    "service": "save_data",
+    "to": "save"
+   },
+   {
+    "id": "query",
+    "label": "Query",
+    "service": "save_data",
+    "to": "save"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "save",
+    "label": "Save"
+   },
+   {
+    "id": "delete",
+    "label": "Delete"
+   },
+   {
+    "id": "query",
+    "label": "Query"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "measurement_name",
+     "type": "text",
+     "label": "Measurement Name",
+     "helper": "",
+     "group": "Save Parameters",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     }
+    },
+    {
+     "name": "tags",
+     "type": "multiKeyValue",
+     "label": "Tags List",
+     "helper": "",
+     "group": "Save Parameters",
+     "value": null,
+     "description": "",
+     "validation": null,
+     "fields": [
+      {
+       "name": "tag_key",
+       "placeholder": "Tags Key",
+       "validation": null
+      }
+     ]
+    },
+    {
+     "name": "fields",
+     "type": "multiKeyValue",
+     "label": "Fields List",
+     "helper": "",
+     "group": "Save Parameters",
+     "value": null,
+     "description": "",
+     "validation": null,
+     "fields": [
+      {
+       "name": "field_key",
+       "placeholder": "Field Key",
+       "validation": null
+      }
+     ]
+    }
+   ]
+  }
+ }
+]

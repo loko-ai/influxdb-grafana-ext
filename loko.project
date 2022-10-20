@@ -1,13 +1,383 @@
 {
-  "name": "influx_grafana",
-  "id": "influx_grafana",
+  "name": "influxdb-grafana-ext",
+  "id": "influxdb-grafana-ext",
   "description": "",
   "created_on": "20/10/2022, 09:49:11",
-  "last_modify": "20/10/2022, 09:49:11",
+  "last_modify": "20/10/2022, 17:35:04",
   "graphs": {
     "main": {
-      "nodes": [],
-      "edges": [],
+      "nodes": [
+        {
+          "id": "4c92607d-de83-4ff9-ac85-2eb1c80bb9a4",
+          "position": {
+            "x": 904.742019227005,
+            "y": 356.2131255907073
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 60,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "save_data",
+                "to": "save"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "tags",
+                  "type": "multiKeyValue",
+                  "label": "Tags List",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tags Key",
+                      "validation": null
+                    }
+                  ]
+                },
+                {
+                  "name": "fields",
+                  "type": "multiKeyValue",
+                  "label": "Fields List",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ]
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "measurement_name": "fake_data",
+                "tags": [
+                  {
+                    "tag_key": "Linea",
+                    "id": "a436bddf-4f61-425f-b4d3-e36fc7b13e39"
+                  },
+                  {
+                    "tag_key": "Traliccio",
+                    "id": "6c069a54-25c7-41a5-a13b-3452a6856745"
+                  }
+                ],
+                "fields": [
+                  {
+                    "field_key": "orario",
+                    "id": "0604e2b3-343b-4b09-a2dd-e5c79528193a"
+                  }
+                ]
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 904.742019227005,
+            "y": 356.2131255907073
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "41f411cc-4327-4e9e-88f6-b858e5a07ffd",
+          "position": {
+            "x": 394,
+            "y": 327
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "CSV Reader",
+            "events": null,
+            "description": "### Description\nThe CSV READER component allows reading files in csv format. \n\nYou have the possibility to set a separator using the **Separator** parameter. The **Infer types** parameter allows the automatic transformation of the type of non-textual fields.\n\n### Input\nThe input required by this component is the file path in PosixPath format. However, the file path can also be defined when the component is created, in which case no input is required.\n\n### Output\nThe submitted file is returned row by row, where each row is represented by a dictionary that has the column names as keys.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Inputs",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "value",
+                  "type": "files",
+                  "label": "File",
+                  "fragment": "files",
+                  "helper": "choose a file or read input"
+                },
+                {
+                  "name": "separator",
+                  "type": "text",
+                  "label": "Separator"
+                },
+                {
+                  "name": "df",
+                  "type": "boolean",
+                  "label": "Dask Dataframe"
+                },
+                {
+                  "name": "infer_type",
+                  "type": "boolean",
+                  "label": "Infer types"
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                }
+              ],
+              "click": "Send file",
+              "icon": "RiFileChart2Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "separator": ",",
+                "df": false,
+                "infer_type": false,
+                "propagate": true,
+                "value": {
+                  "name": "fake_data.csv",
+                  "path": "data/dati/csv_file/fake_data.csv",
+                  "parent": "data/dati/csv_file",
+                  "isDir": false,
+                  "hidden": false
+                }
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 394,
+            "y": 327
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "7ad6908c-2926-4b13-a9d5-c57893159358",
+          "position": {
+            "x": 627.2528893636297,
+            "y": 343.8446616818876
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "80"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 627.2528893636297,
+            "y": 343.8446616818876
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-41f411cc-4327-4e9e-88f6-b858e5a07ffdoutput-7ad6908c-2926-4b13-a9d5-c57893159358input",
+          "source": "41f411cc-4327-4e9e-88f6-b858e5a07ffd",
+          "sourceHandle": "output",
+          "target": "7ad6908c-2926-4b13-a9d5-c57893159358",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#F8637A",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-7ad6908c-2926-4b13-a9d5-c57893159358output-4c92607d-de83-4ff9-ac85-2eb1c80bb9a4save",
+          "source": "7ad6908c-2926-4b13-a9d5-c57893159358",
+          "sourceHandle": "output",
+          "target": "4c92607d-de83-4ff9-ac85-2eb1c80bb9a4",
+          "targetHandle": "save",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "__class__": "Edge"
+        }
+      ],
       "__class__": "Graph"
     }
   },

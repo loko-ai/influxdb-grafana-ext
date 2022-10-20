@@ -1,4 +1,5 @@
 async
 influxdb_client
+loko-extensions
 sanic
 sanic-openapi

@@ -1,1 +1,9 @@
 mount-volumes
+.*
+venv
+!.gitignore
+!.dockerignore
+*.pyc
+dist
+__pycache__
+dist

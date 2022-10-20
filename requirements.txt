@@ -1,1 +1,4 @@
-Flask
+async
+influxdb_client
+sanic
+sanic-openapi

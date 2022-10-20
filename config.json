@@ -1,0 +1,41 @@
+{
+  "side_containers": {
+    "influxdb": {
+      "image": "influxdb:2.4",
+      "ports": {
+        "8086": "8086"
+      },
+      "environment": {
+        "DOCKER_INFLUXDB_INIT_USERNAME": "influx-user",
+        "DOCKER_INFLUXDB_INIT_PASSWORD": "influx-pass",
+        "DOCKER_INFLUXDB_INIT_ORG": "influx-org",
+        "DOCKER_INFLUXDB_INIT_BUCKET": "influx-bu"
+      },
+      "expose": [
+        "8086"
+      ],
+      "volumes": [
+       "/var/opt/loko/influxdb-grafana-ext/influx-data:/var/lib/influxdb"
+       ],
+      "gui": {
+        "name": "influxdb",
+        "path": "/",
+        "gw": false
+      }
+    },
+    "grafana": {
+      "image": "grafana/grafana:9.2.1",
+      "ports": {
+        "3000": "3000"
+      },
+      "expose": [
+        "3000"
+      ],
+      "gui": {
+        "name": "grafana",
+        "path": "/",
+        "gw": false
+      }
+    }
+  }
+}

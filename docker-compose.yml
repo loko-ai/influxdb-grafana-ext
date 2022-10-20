@@ -1,3 +1,4 @@
+## sudo mkdir -p ./mount-volumes/grafana && sudo chmod 777 ./mount-volumes/grafana
 version: '3.8'
 
 networks:
@@ -7,23 +8,37 @@ networks:
 
 services:
   influxdb:
-    image: influxdb:2.4
-    environment:
-      - DOCKER_INFLUXDB_INIT_USERNAME=influx-user
-      - DOCKER_INFLUXDB_INIT_PASSWORD=influx-pass
-      - DOCKER_INFLUXDB_INIT_ORG=influx-org
-      - DOCKER_INFLUXDB_INIT_BUCKET=influx-bu
+    image: influxdb:2.4-alpine
+    container_name: influxdb
+    #environment:
+    #  - DOCKER_INFLUXDB_DB=influx
+    #  - DOCKER_INFLUXDB_INIT_MODE=upgrade
+    #  - DOCKER_INFLUXDB_INIT_USERNAME=influx-user
+    #  - DOCKER_INFLUXDB_INIT_PASSWORD=influx-pass
+    #  - DOCKER_INFLUXDB_INIT_ORG=influx-org
+    #  - DOCKER_INFLUXDB_INIT_BUCKET=influx-bu
+    volumes:
+      - ./mount-volumes/influxdb2:/var/lib/influxdb2
     ports:
       - 8086:8086
-    volumes:
-      - ./influx-data:/var/lib/influxdb
     networks:
       - influx-grafana
 
   grafana:
     image: grafana/grafana:9.2.1
+    container_name: grafana
+    restart: always
+    depends_on:
+      - influxdb
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=
+    links:
+      - influxdb
     ports:
       - 3000:3000
+    volumes:
+      - ./mount-volumes/grafana:/var/lib/grafana
     networks:
       - influx-grafana
-

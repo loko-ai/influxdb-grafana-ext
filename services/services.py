@@ -43,23 +43,46 @@ async def save_data(value, args):
 
     tags_keys = [tags_keys[i]["tag_key"] for i in range(len(tags_keys))]
 
+    time_key = args.get("time", None)
+
     measurement_name = args.get("measurement_name", None)
     if not measurement_name:
         raise SanicException("Measurement name not specified", status_code=400)
     # logger.debug(value)
     influxdao = InfluxDAO()
-    influxdao.save(records=value, measurement=measurement_name, tags=tags_keys, fields=fields_keys)
+    influxdao.save(records=value, measurement=measurement_name, tags=tags_keys, fields=fields_keys, time=time_key)
 
     # n = int(args.get('n'))
-    return sanic.json(dict(msg="tutto ok"))
+    return sanic.json(f"Data correctly saved on bucket '{influxdao.bucket}', measurement name: '{measurement_name}'")
 
-@bp.post('/upload_file')
-@extract_value_args(file=True)
-async def f2(file, args):
+@bp.post('/delete_data')
+@extract_value_args(file=False)
+async def delete_data(value, args):
     logger.debug(f'ARGS: {args}')
-    logger.debug(f'JSON: {file[0].name}')
-    n = int(args.get('n'))
-    return sanic.json(dict(msg=f"{'#'*n} You have uploaded the file: {file[0].name}! {'#'*n}"))
+    # logger.debug(f'JSON: {file[0].name}')
+    measurement_name = args.get("measurement_delete", None)
+    if not measurement_name:
+        raise SanicException("Measurement name not specified", status_code=400)
+    start = args.get("start_delete", None)
+    stop = args.get("stop_delete", None)
+    influxdao = InfluxDAO()
+    influxdao.delete(measurement=measurement_name, start=start, stop=stop)
+    return sanic.json(f"Deleted data from '{measurement_name}'")
+
+@bp.post('/query')
+@extract_value_args(file=False)
+async def delete_data(value, args):
+    logger.debug(f'ARGS: {args}')
+    # logger.debug(f'JSON: {file[0].name}')
+    # measurement_name = args.get("measurement_delete", None)
+    # if not measurement_name:
+    #     raise SanicException("Measurement name not specified", status_code=400)
+    start = args.get("start_query", None)
+    influxdao = InfluxDAO()
+
+    res = influxdao.query( start=start,)
+    logger.debug(f"len::: {len(res)}")
+    return sanic.json(res)
 
 @app.exception(Exception)
 async def manage_exception(request, exception):

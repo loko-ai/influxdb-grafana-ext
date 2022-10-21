@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from typing import List
 
@@ -21,7 +22,7 @@ class InfluxDAO:
             _fields = {k: row[k] for k in fields}
             record = dict(measurement=measurement, tags=_tags, fields=_fields)
             if time:
-                record['time'] = row['time']
+                record['time'] = row[time]
             return record
 
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
@@ -29,20 +30,21 @@ class InfluxDAO:
         logger.debug(f"Bucket:: {self.bucket}, measurement:: {measurement}")
         write_api.write(bucket=self.bucket, record=_records)
 
-    def delete(self, measurement: str, start="1970-01-01T00:00:00Z", stop=None):
+    def delete(self, measurement: str, start=None, stop=None):
 
         delete_api = self.client.delete_api()
 
+        start = start or "1970-01-01T00:00:00Z"
         stop = stop or datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
         delete_api.delete(start, stop, predicate=f'_measurement="{measurement}"', bucket=self.bucket)
 
     def query(self, start='-50m'):
 
         query_api = self.client.query_api()
-
+        start = start or '-50m'
         tables = query_api.query(f'from(bucket:"{self.bucket}") |> range(start: {start})')
 
-        return tables.to_json(indent=5)
+        return json.loads(tables.to_json())
 
 
 if __name__ == '__main__':

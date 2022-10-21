@@ -1,5 +1,3 @@
-# using Sanic
-import json
 import traceback
 
 import sanic
@@ -25,11 +23,17 @@ app = get_app(name)
 bp = Blueprint("default", url_prefix=f"/")
 app.config["API_TITLE"] = name
 
+
+influxdao = InfluxDAO()
+
 @bp.post('/save_data')
 @extract_value_args()
 async def save_data(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
+
+    bucket = args.get('bucket_save')
+
     fields_keys = args.get("fields", [])
 
     if len(fields_keys)==0:
@@ -48,39 +52,47 @@ async def save_data(value, args):
     measurement_name = args.get("measurement_name", None)
     if not measurement_name:
         raise SanicException("Measurement name not specified", status_code=400)
-    # logger.debug(value)
-    influxdao = InfluxDAO()
-    influxdao.save(records=value, measurement=measurement_name, tags=tags_keys, fields=fields_keys, time=time_key)
 
-    # n = int(args.get('n'))
-    return sanic.json(f"Data correctly saved on bucket '{influxdao.bucket}', measurement name: '{measurement_name}'")
+    influxdao.save(bucket=bucket, records=value, measurement=measurement_name, tags=tags_keys,
+                   fields=fields_keys, time=time_key)
+
+    return sanic.json(f"Data correctly saved on measurement name: '{measurement_name}'")
 
 @bp.post('/delete_data')
-@extract_value_args(file=False)
+@extract_value_args()
 async def delete_data(value, args):
     logger.debug(f'ARGS: {args}')
-    # logger.debug(f'JSON: {file[0].name}')
-    measurement_name = args.get("measurement_delete", None)
-    if not measurement_name:
-        raise SanicException("Measurement name not specified", status_code=400)
-    start = args.get("start_delete", None)
-    stop = args.get("stop_delete", None)
-    influxdao = InfluxDAO()
-    influxdao.delete(measurement=measurement_name, start=start, stop=stop)
-    return sanic.json(f"Deleted data from '{measurement_name}'")
+    logger.debug(f'JSON: {value}')
 
-@bp.post('/query')
-@extract_value_args(file=False)
-async def delete_data(value, args):
-    logger.debug(f'ARGS: {args}')
-    # logger.debug(f'JSON: {file[0].name}')
-    # measurement_name = args.get("measurement_delete", None)
+    bucket = args.get('bucket_del')
+
+    measurement_name = args.get("measurement_delete", None)
     # if not measurement_name:
     #     raise SanicException("Measurement name not specified", status_code=400)
-    start = args.get("start_query", None)
-    influxdao = InfluxDAO()
+    start = args.get("start_delete", None)
+    stop = args.get("stop_delete", None)
+    influxdao.delete(bucket=bucket, measurement=measurement_name, predicate=value, start=start, stop=stop)
+    return sanic.json(f"Deleted data")
 
-    res = influxdao.query( start=start,)
+@bp.post('/read')
+@extract_value_args()
+async def read_data(value, args):
+    logger.debug(f'ARGS: {args}')
+
+    bucket = args.get('bucket_read')
+
+    start = args.get("start_read", None)
+    stop = args.get("stop_read", None)
+    res = influxdao.read(bucket=bucket, start=start, stop=stop)
+    return sanic.json(res)
+
+@bp.post('/query')
+@extract_value_args()
+async def query_data(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+
+    res = influxdao.query(query=value)
     logger.debug(f"len::: {len(res)}")
     return sanic.json(res)
 

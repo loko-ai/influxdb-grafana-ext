@@ -10,12 +10,14 @@ from utils.logger_utils import logger
 
 class InfluxDAO:
     def __init__(self, url='http://influxdb-grafana-ext_influxdb:8086', org='influx-org', username='influx-user',
-                 password='influx-pass', bucket='influx-bu'):
+                 password='influx-pass'):
         logger.debug(f"INFLUXDB URL:: {url}")
         self.client = InfluxDBClient(url=url, org=org, username=username, password=password)
-        self.bucket = bucket
 
-    def save(self, records: List[dict], measurement: str, tags: list, fields: list, time: str = None):
+    def save(self, records: List[dict], measurement: str, tags: list, fields: list, time: str = None,
+             bucket='influx-bu'):
+
+        options = SYNCHRONOUS
 
         def get_record(row):
             _tags = {k: row[k] for k in tags}
@@ -25,24 +27,34 @@ class InfluxDAO:
                 record['time'] = row[time]
             return record
 
-        write_api = self.client.write_api(write_options=SYNCHRONOUS)
+        write_api = self.client.write_api(write_options=options)
         _records = [get_record(row) for row in records]
-        logger.debug(f"Bucket:: {self.bucket}, measurement:: {measurement}")
-        write_api.write(bucket=self.bucket, record=_records)
+        logger.debug(f"Bucket:: {bucket}, measurement:: {measurement}")
+        write_api.write(bucket=bucket, record=_records)
 
-    def delete(self, measurement: str, start=None, stop=None):
+    def delete(self, measurement: str = None, predicate: str = None, start=None, stop=None, bucket='influx-bu'):
+
+        if measurement:
+            predicate = f'_measurement="{measurement}"'
 
         delete_api = self.client.delete_api()
 
         start = start or "1970-01-01T00:00:00Z"
         stop = stop or datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
-        delete_api.delete(start, stop, predicate=f'_measurement="{measurement}"', bucket=self.bucket)
+        delete_api.delete(start, stop, predicate=predicate, bucket=bucket)
 
-    def query(self, start='-50m'):
+    def read(self, start=None, stop=None, bucket='influx-bu'):
+        query_api = self.client.query_api()
+        start = start or "1970-01-01T00:00:00Z"
+        stop = stop or datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+        tables = query_api.query(f'from(bucket:"{bucket}") |> range(start: {start}, stop: {stop})')
+
+        return json.loads(tables.to_json())
+
+    def query(self, query: str):
 
         query_api = self.client.query_api()
-        start = start or '-50m'
-        tables = query_api.query(f'from(bucket:"{self.bucket}") |> range(start: {start})')
+        tables = query_api.query(query)
 
         return json.loads(tables.to_json())
 
@@ -57,17 +69,18 @@ if __name__ == '__main__':
 
     measurement = 'fake_data'
 
-    influxdao.delete(measurement)
+    # influxdao.delete(measurement)
 
-    print(influxdao.query())
+    print(influxdao.read(start='2021-05-22T23:30:00Z'))
 
-    with open(data_path) as f:
-        csv_reader = csv.reader(f, delimiter=',')
-        cols = next(csv_reader)
-        records = [dict(zip(cols, row)) for row in csv_reader]
-        # print(records)
-        influxdao.save(records, measurement, tags=['Linea', 'Traliccio'], fields=['orario'])
-
-    print(influxdao.query())
+    # with open(data_path) as f:
+    #     csv_reader = csv.reader(f, delimiter=',')
+    #     cols = next(csv_reader)
+    #     records = [dict(zip(cols, row)) for row in csv_reader]*10000
+    #     # print(records)
+    #     influxdao.save(records, measurement, tags=['Linea', 'Traliccio'], fields=['valore'], asynchronous=False)
+    #     print('SAVED')
+    #
+    # print(influxdao.read())
 
 

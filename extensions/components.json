@@ -14,22 +14,32 @@
     "to": "save"
    },
    {
+    "id": "read",
+    "label": "Read",
+    "service": "read",
+    "to": "read"
+   },
+   {
     "id": "delete",
     "label": "Delete",
     "service": "delete_data",
-    "to": "save"
+    "to": "delete"
    },
    {
     "id": "query",
     "label": "Query",
     "service": "query",
-    "to": "save"
+    "to": "query"
    }
   ],
   "outputs": [
    {
     "id": "save",
     "label": "Save"
+   },
+   {
+    "id": "read",
+    "label": "Read"
    },
    {
     "id": "delete",
@@ -42,10 +52,23 @@
   ],
   "options": {
    "values": {
+    "bucket_save": "influx-bu",
+    "bucket_del": "influx-bu",
     "start_delete": "1970-01-01T00:00:00Z",
-    "start_query": "-50m"
+    "bucket_read": "influx-bu",
+    "start_read": "1970-01-01T00:00:00Z"
    },
    "args": [
+    {
+     "name": "bucket_save",
+     "type": "text",
+     "label": "Bucket Name",
+     "helper": "",
+     "group": "Save Parameters",
+     "value": "influx-bu",
+     "description": "",
+     "validation": null
+    },
     {
      "name": "measurement_name",
      "type": "text",
@@ -101,14 +124,38 @@
      ]
     },
     {
-     "name": "measurement_delete",
+     "name": "bucket_del",
      "type": "text",
+     "label": "Bucket Name",
+     "helper": "",
+     "group": "Delete Parameters",
+     "value": "influx-bu",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "from_query_del",
+     "type": "boolean",
+     "label": "From query",
+     "helper": "",
+     "group": "Delete Parameters",
+     "value": false,
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "measurement_delete",
+     "type": "dynamic",
      "label": "Measurement Name",
      "helper": "",
      "group": "Delete Parameters",
      "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "parent": "from_query_del",
+     "condition": "!{parent}",
+     "dynamicType": "text",
+     "options": null
     },
     {
      "name": "start_delete",
@@ -131,12 +178,32 @@
      "validation": null
     },
     {
-     "name": "start_query",
+     "name": "bucket_read",
+     "type": "text",
+     "label": "Bucket Name",
+     "helper": "",
+     "group": "Read Parameters",
+     "value": "influx-bu",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "start_read",
      "type": "text",
      "label": "Start",
-     "helper": "Define the starting time to consider for query your data",
-     "group": "Query Parameters",
-     "value": "-50m",
+     "helper": "Define the starting time to consider for reading your data",
+     "group": "Read Parameters",
+     "value": "1970-01-01T00:00:00Z",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "stop_read",
+     "type": "text",
+     "label": "Stop",
+     "helper": "Define the stopping time to consider for reading your data",
+     "group": "Read Parameters",
+     "value": null,
      "description": "",
      "validation": null
     }

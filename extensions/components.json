@@ -53,6 +53,7 @@
   "options": {
    "values": {
     "bucket_save": "influx-bu",
+    "manual": true,
     "bucket_del": "influx-bu",
     "start_delete": "1970-01-01T00:00:00Z",
     "bucket_read": "influx-bu",
@@ -70,58 +71,90 @@
      "validation": null
     },
     {
+     "name": "manual",
+     "type": "boolean",
+     "label": "Manual",
+     "helper": "",
+     "group": "Save Parameters",
+     "value": true,
+     "description": "",
+     "validation": null
+    },
+    {
      "name": "measurement_name",
-     "type": "text",
+     "type": "dynamic",
      "label": "Measurement Name",
      "helper": "",
      "group": "Save Parameters",
      "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "parent": "manual",
+     "condition": "{parent}",
+     "dynamicType": "text",
+     "options": null,
+     "fields": null,
+     "url": null
     },
     {
      "name": "time",
-     "type": "text",
+     "type": "dynamic",
      "label": "Time Key",
      "helper": "",
      "group": "Save Parameters",
      "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "parent": "manual",
+     "condition": "{parent}",
+     "dynamicType": "text",
+     "options": null,
+     "fields": null,
+     "url": null
     },
     {
      "name": "tags",
-     "type": "multiKeyValue",
+     "type": "dynamic",
      "label": "Tags",
      "helper": "",
      "group": "Save Parameters",
      "value": null,
      "description": "",
      "validation": null,
+     "parent": "manual",
+     "condition": "{parent}",
+     "dynamicType": "multiKeyValue",
+     "options": null,
      "fields": [
       {
        "name": "tag_key",
        "placeholder": "Tag Key",
        "validation": null
       }
-     ]
+     ],
+     "url": null
     },
     {
      "name": "fields",
-     "type": "multiKeyValue",
+     "type": "dynamic",
      "label": "Fields",
      "helper": "",
      "group": "Save Parameters",
      "value": null,
      "description": "",
      "validation": null,
+     "parent": "manual",
+     "condition": "{parent}",
+     "dynamicType": "multiKeyValue",
+     "options": null,
      "fields": [
       {
        "name": "field_key",
        "placeholder": "Field Key",
        "validation": null
       }
-     ]
+     ],
+     "url": null
     },
     {
      "name": "bucket_del",
@@ -155,7 +188,9 @@
      "parent": "from_query_del",
      "condition": "!{parent}",
      "dynamicType": "text",
-     "options": null
+     "options": null,
+     "fields": null,
+     "url": null
     },
     {
      "name": "start_delete",
@@ -184,6 +219,16 @@
      "helper": "",
      "group": "Read Parameters",
      "value": "influx-bu",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "measurement_read",
+     "type": "text",
+     "label": "Measurement Name",
+     "helper": "",
+     "group": "Read Parameters",
+     "value": null,
      "description": "",
      "validation": null
     },

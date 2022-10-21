@@ -12,20 +12,25 @@ read_db_service = "read"
 save_group = "Save Parameters"
 
 bucket_save = Arg(name="bucket_save", label="Bucket Name", type="text", group=save_group, value='influx-bu')
-measurement_name = Arg(name="measurement_name", label="Measurement Name", type="text", group=save_group)
 
-time_key = Arg(name="time", label="Time Key", type="text", group=save_group)
+manual = Arg(name="manual", label="Manual", type="boolean", group=save_group, value=True)
 
+measurement_name = Dynamic(name="measurement_name", label="Measurement Name", parent='manual', condition='{parent}',
+                           dynamicType="text", group=save_group)
 
+time_key = Dynamic(name="time", label="Time Key", parent='manual', condition='{parent}', dynamicType="text",
+                   group=save_group)
 
 mkvfields_tags = [MKVField(name="tag_key", label="Tag Key")]
-tags = MultiKeyValue(name="tags", label="Tags", fields=mkvfields_tags, group=save_group)
+tags = Dynamic(name="tags", label="Tags", parent='manual', condition='{parent}', dynamicType='multiKeyValue',
+               fields=mkvfields_tags, group=save_group)
 
 mkvfields_fields = [MKVField(name="field_key", label="Field Key")]
-fields = MultiKeyValue(name="fields", label="Fields", fields=mkvfields_fields, group=save_group)
+fields = Dynamic(name="fields", label="Fields", parent='manual', condition='{parent}', dynamicType='multiKeyValue',
+                 fields=mkvfields_fields, group=save_group)
 
 
-save_args = [bucket_save, measurement_name, time_key, tags, fields]
+save_args = [bucket_save, manual, measurement_name, time_key, tags, fields]
 
 ################################# Delete ARGS #################################
 delete_group = "Delete Parameters"
@@ -52,6 +57,8 @@ read_group = "Read Parameters"
 
 bucket_read = Arg(name="bucket_read", label="Bucket Name", type="text", group=read_group, value='influx-bu')
 
+measurement_read = Arg(name="measurement_read", label="Measurement Name", type="text", group=read_group)
+
 start_read = Arg(name="start_read", label="Start", type="text",
                   helper="Define the starting time to consider for reading your data",
                   group=read_group,
@@ -61,7 +68,7 @@ stop_read = Arg(name="stop_read", label="Stop", type="text",
                   group=read_group)
 
 
-read_args = [bucket_read, start_read, stop_read]
+read_args = [bucket_read, measurement_read, start_read, stop_read]
 
 ############# ARGS
 args_list = save_args + delete_args + read_args

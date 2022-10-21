@@ -12,12 +12,13 @@ class InfluxDAO:
     def __init__(self, url='http://influxdb-grafana-ext_influxdb:8086', org='influx-org', username='influx-user',
                  password='influx-pass'):
         logger.debug(f"INFLUXDB URL:: {url}")
-        self.client = InfluxDBClient(url=url, org=org, username=username, password=password)
+        self.client = InfluxDBClient(url=url, org=org, username=username, password=password, timeout=172800)
 
-    def save(self, records: List[dict], measurement: str, tags: list, fields: list, time: str = None,
+    def save(self, records: List[dict], measurement: str = None, tags: list = None, fields: list = None, time: str = None,
              bucket='influx-bu'):
 
         options = SYNCHRONOUS
+        tags = tags or []
 
         def get_record(row):
             _tags = {k: row[k] for k in tags}
@@ -28,7 +29,7 @@ class InfluxDAO:
             return record
 
         write_api = self.client.write_api(write_options=options)
-        _records = [get_record(row) for row in records]
+        _records = [get_record(row) for row in records] if measurement else records
         logger.debug(f"Bucket:: {bucket}, measurement:: {measurement}")
         write_api.write(bucket=bucket, record=_records)
 
@@ -43,11 +44,12 @@ class InfluxDAO:
         stop = stop or datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
         delete_api.delete(start, stop, predicate=predicate, bucket=bucket)
 
-    def read(self, start=None, stop=None, bucket='influx-bu'):
+    def read(self, measurement: str, start=None, stop=None, bucket='influx-bu'):
         query_api = self.client.query_api()
         start = start or "1970-01-01T00:00:00Z"
         stop = stop or datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
-        tables = query_api.query(f'from(bucket:"{bucket}") |> range(start: {start}, stop: {stop})')
+        tables = query_api.query(f'from(bucket:"{bucket}") |> range(start: {start}, stop: {stop}) '
+                                 f'|> filter(fn: (r) => r._measurement == "{measurement}")')
 
         return json.loads(tables.to_json())
 

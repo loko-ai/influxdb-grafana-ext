@@ -8,7 +8,7 @@ from utils.logger_utils import logger
 
 
 class InfluxDAO:
-    def __init__(self, url='http://localhost:8086', org='influx-org', username='influx-user',
+    def __init__(self, url='http://influxdb-grafana-ext_influxdb:8086', org='influx-org', username='influx-user',
                  password='influx-pass', bucket='influx-bu'):
         logger.debug(f"INFLUXDB URL:: {url}")
         self.client = InfluxDBClient(url=url, org=org, username=username, password=password)
@@ -48,10 +48,10 @@ class InfluxDAO:
 if __name__ == '__main__':
     import csv
 
-    data_path = "/home/roberta/old_pc/terna_lib/dati/v3_bis/fake_data.csv"
+    # data_path = "/home/roberta/old_pc/terna_lib/dati/v3_bis/fake_data.csv"
 
-    # data_path = '/home/cecilia/Scaricati/fake_data.csv'
-    influxdao = InfluxDAO()
+    data_path = '/home/cecilia/Scaricati/fake_data.csv'
+    influxdao = InfluxDAO(url='http://localhost:8086')
 
     measurement = 'fake_data'
 

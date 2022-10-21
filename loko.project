@@ -3,7 +3,7 @@
   "id": "influxdb-grafana-ext",
   "description": "",
   "created_on": "20/10/2022, 09:49:11",
-  "last_modify": "20/10/2022, 17:35:04",
+  "last_modify": "21/10/2022, 07:16:16",
   "graphs": {
     "main": {
       "nodes": [
@@ -255,8 +255,8 @@
                 "propagate": true,
                 "value": {
                   "name": "fake_data.csv",
-                  "path": "data/dati/csv_file/fake_data.csv",
-                  "parent": "data/dati/csv_file",
+                  "path": "data/data/fake_data.csv",
+                  "parent": "data/data",
                   "isDir": false,
                   "hidden": false
                 }

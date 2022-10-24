@@ -1,11 +1,11 @@
 [
  {
   "name": "InfluxDB",
-  "description": "",
+  "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
   "group": "Custom",
   "icon": "RiStackFill",
   "click": null,
-  "configured": true,
+  "configured": false,
   "inputs": [
    {
     "id": "save",
@@ -68,7 +68,9 @@
      "group": "Save Parameters",
      "value": "influx-bu",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     },
     {
      "name": "manual",
@@ -164,7 +166,9 @@
      "group": "Delete Parameters",
      "value": "influx-bu",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     },
     {
      "name": "from_query_del",
@@ -220,7 +224,9 @@
      "group": "Read Parameters",
      "value": "influx-bu",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     },
     {
      "name": "measurement_read",

@@ -1,8 +1,8 @@
 from loko_extensions.model.components import Component, Input, Output, save_extensions, Select, Arg, Dynamic, \
     MultiKeyValue, MKVField
 
+from doc.doc import influxdb_doc
 
-component_description = ""
 save_data_service = "save_data"
 delete_data_service = "delete_data"
 query_db_service = "query"
@@ -11,7 +11,8 @@ read_db_service = "read"
 ################################# SAVE ARGS ##################################
 save_group = "Save Parameters"
 
-bucket_save = Arg(name="bucket_save", label="Bucket Name", type="text", group=save_group, value='influx-bu')
+bucket_save = Arg(name="bucket_save", label="Bucket Name", type="text", group=save_group, value='influx-bu',
+                  required=True)
 
 manual = Arg(name="manual", label="Manual", type="boolean", group=save_group, value=True)
 
@@ -35,12 +36,12 @@ save_args = [bucket_save, manual, measurement_name, time_key, tags, fields]
 ################################# Delete ARGS #################################
 delete_group = "Delete Parameters"
 
-bucket_del = Arg(name="bucket_del", label="Bucket Name", type="text", group=delete_group, value='influx-bu')
+bucket_del = Arg(name="bucket_del", label="Bucket Name", type="text", group=delete_group, value='influx-bu',
+                 required=True)
 
 from_query_del = Arg(name='from_query_del', label='From query', type='boolean', group=delete_group, value=False)
 measurement_del = Dynamic(name="measurement_delete", label="Measurement Name", parent='from_query_del',
                           dynamicType="text", condition='!{parent}', group=delete_group)
-
 
 start_del = Arg(name="start_delete", label="Start", type="text",
                 helper="Define the starting time to consider for deleting your data",
@@ -55,7 +56,8 @@ delete_args = [bucket_del, from_query_del, measurement_del, start_del, stop_del]
 ############################## READ ARGS ######################################
 read_group = "Read Parameters"
 
-bucket_read = Arg(name="bucket_read", label="Bucket Name", type="text", group=read_group, value='influx-bu')
+bucket_read = Arg(name="bucket_read", label="Bucket Name", type="text", group=read_group, value='influx-bu',
+                  required=True)
 
 measurement_read = Arg(name="measurement_read", label="Measurement Name", type="text", group=read_group)
 
@@ -82,7 +84,7 @@ input_list = [Input(id="save", label="Save", to="save", service=save_data_servic
 output_list = [Output(id="save", label="Save"), Output(id="read", label="Read"), Output(id="delete", label="Delete"),
                Output(id="query", label="Query")]
 
-influxDB_component = Component(name="InfluxDB", description=component_description, inputs=input_list,
-                               outputs=output_list, args=args_list, icon="RiStackFill", group='Custom')
+influxDB_component = Component(name="InfluxDB", description=influxdb_doc, inputs=input_list, outputs=output_list,
+                               args=args_list, icon="RiStackFill", group='Custom', configured=False)
 
 save_extensions([influxDB_component])

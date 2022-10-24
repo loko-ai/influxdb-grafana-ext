@@ -3,7 +3,7 @@
   "id": "influxdb-grafana-ext",
   "description": "",
   "created_on": "20/10/2022, 09:49:11",
-  "last_modify": "21/10/2022, 15:24:46",
+  "last_modify": "24/10/2022, 09:16:51",
   "graphs": {
     "main": {
       "nodes": [
@@ -301,7 +301,7 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "delete",
+            "comment": "Delete",
             "fill": "#F74B65",
             "height": 147,
             "width": 1019.9386379396681
@@ -330,7 +330,7 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "query",
+            "comment": "Query",
             "fill": "#F9C74F",
             "height": 188,
             "width": 689.8767495472596
@@ -367,179 +367,6 @@
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
-          "__class__": "Node"
-        },
-        {
-          "id": "73c15504-172b-4284-ac1a-822aa19aeada",
-          "position": {
-            "x": 1757.6927831107714,
-            "y": 537.6431174117645
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Grouper",
-            "events": null,
-            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input",
-                "closed": false
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "n",
-                  "label": "Group size",
-                  "type": "number"
-                }
-              ],
-              "click": null,
-              "icon": "RiGroupFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "n": "1000"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1757.6927831107714,
-            "y": 537.6431174117645
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "56d0ebfc-963c-41fd-90c1-419829d55a59",
-          "position": {
-            "x": 957,
-            "y": 550
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Array",
-            "events": null,
-            "description": "### Description\nThe ARRAY component is used as an iterator. The array to iterate over can be defined with the parameter value or depend on the input received.\n\n### Input\nIn case an input is given, it will correspond to the data to iterate on.\n\n### Output\nThe number of outputs depends on the length of what is passed in input or defined in the parameter value. The output will consist of iterating element by element.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "value",
-                  "type": "text",
-                  "description": "Python or json code that evaluates to a list or iterable",
-                  "label": "value",
-                  "validation": null,
-                  "fragment": null,
-                  "advanced": false,
-                  "options": null,
-                  "value": null
-                },
-                {
-                  "name": "propagate",
-                  "type": "boolean",
-                  "label": "Flush at the end"
-                },
-                {
-                  "name": "flatten",
-                  "type": "boolean",
-                  "label": "Flatten the array recursively"
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiBracketsFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "value": "[1,2,3,4,5]",
-                "propagate": true,
-                "flatten": false
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 957,
-            "y": 550
-          },
           "__class__": "Node"
         },
         {
@@ -664,8 +491,8 @@
         {
           "id": "0a11bda7-fc6d-4649-a6eb-d3543d33dcd8",
           "position": {
-            "x": 1161.2703813167197,
-            "y": 539.0529104091545
+            "x": 1172.5023813167197,
+            "y": 557.1969104091545
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -745,7 +572,7 @@
                 "debug": false,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "from datetime import datetime\n\nbucket = 'influx-bu'\nstart = '1970-01-01T00:00:00Z'\nstop = datetime.now().strftime(\"%Y-%m-%dT%H:%M:%SZ\")\nreturn f'from(bucket:\"{bucket}\") |> range(start: {start}, stop: {stop})'"
+                "code": "from datetime import datetime\n\nbucket = 'influx-bu'\nmeasurement = 'fake_data'\nstart = '1970-01-01T00:00:00Z'\nstop = datetime.now().strftime(\"%Y-%m-%dT%H:%M:%SZ\")\nreturn f'from(bucket:\"{bucket}\") |> range(start: {start}, stop: {stop}) |> filter(fn: (r) => r._measurement == \"{measurement}\")'"
               }
             },
             "locked": null
@@ -753,8 +580,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1161.2703813167197,
-            "y": 539.0529104091545
+            "x": 1172.5023813167197,
+            "y": 557.1969104091545
           },
           "__class__": "Node"
         },
@@ -852,782 +679,6 @@
           "positionAbsolute": {
             "x": 1430.6811241476034,
             "y": 311.80156789817704
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "d0ec7c81-8c15-48f2-99e9-3c9fff920e3c",
-          "position": {
-            "x": 1195,
-            "y": 334
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 80,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "InfluxDB",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "save",
-                "label": "Save",
-                "service": "save_data",
-                "to": "save"
-              },
-              {
-                "id": "read",
-                "label": "Read",
-                "service": "read",
-                "to": "read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete",
-                "service": "delete_data",
-                "to": "delete"
-              },
-              {
-                "id": "query",
-                "label": "Query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "save",
-                "label": "Save"
-              },
-              {
-                "id": "read",
-                "label": "Read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete"
-              },
-              {
-                "id": "query",
-                "label": "Query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "bucket_save",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_name",
-                  "type": "text",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "time",
-                  "type": "text",
-                  "label": "Time Key",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "tags",
-                  "type": "multiKeyValue",
-                  "label": "Tags",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "tag_key",
-                      "placeholder": "Tag Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "fields",
-                  "type": "multiKeyValue",
-                  "label": "Fields",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "field_key",
-                      "placeholder": "Field Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "bucket_del",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "from_query_del",
-                  "type": "boolean",
-                  "label": "From query",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": false,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_delete",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "from_query_del",
-                  "condition": "!{parent}",
-                  "dynamicType": "text",
-                  "options": null
-                },
-                {
-                  "name": "start_delete",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_delete",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "bucket_read",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Read Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "start_read",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_read",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiStackFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "bucket_save": "influx-bu",
-                "measurement_name": "",
-                "time": "",
-                "bucket_del": "influx-bu",
-                "from_query_del": false,
-                "start_delete": "1970-01-01T00:00:00Z",
-                "stop_delete": "",
-                "bucket_read": "influx-bu",
-                "start_read": "1970-01-01T00:00:00Z",
-                "stop_read": "",
-                "measurement_delete": "sensor"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1195,
-            "y": 334
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "35435eae-329c-42ed-9333-58aaa3f4f9e9",
-          "position": {
-            "x": 1655,
-            "y": 331
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 80,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "InfluxDB",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "save",
-                "label": "Save",
-                "service": "save_data",
-                "to": "save"
-              },
-              {
-                "id": "read",
-                "label": "Read",
-                "service": "read",
-                "to": "read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete",
-                "service": "delete_data",
-                "to": "delete"
-              },
-              {
-                "id": "query",
-                "label": "Query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "save",
-                "label": "Save"
-              },
-              {
-                "id": "read",
-                "label": "Read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete"
-              },
-              {
-                "id": "query",
-                "label": "Query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "bucket_save",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_name",
-                  "type": "text",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "time",
-                  "type": "text",
-                  "label": "Time Key",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "tags",
-                  "type": "multiKeyValue",
-                  "label": "Tags",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "tag_key",
-                      "placeholder": "Tag Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "fields",
-                  "type": "multiKeyValue",
-                  "label": "Fields",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "field_key",
-                      "placeholder": "Field Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "bucket_del",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "from_query_del",
-                  "type": "boolean",
-                  "label": "From query",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": false,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_delete",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "from_query_del",
-                  "condition": "!{parent}",
-                  "dynamicType": "text",
-                  "options": null
-                },
-                {
-                  "name": "start_delete",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_delete",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "bucket_read",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Read Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "start_read",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_read",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiStackFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "bucket_save": "influx-bu",
-                "measurement_name": "",
-                "time": "",
-                "bucket_del": "influx-bu",
-                "from_query_del": true,
-                "start_delete": "1970-01-01T00:00:00Z",
-                "stop_delete": "",
-                "bucket_read": "influx-bu",
-                "start_read": "1970-01-01T00:00:00Z",
-                "stop_read": ""
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1655,
-            "y": 331
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "0ff5824b-f7d7-4faa-ba2b-cf449636eb06",
-          "position": {
-            "x": 1395,
-            "y": 568
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 80,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "InfluxDB",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "save",
-                "label": "Save",
-                "service": "save_data",
-                "to": "save"
-              },
-              {
-                "id": "read",
-                "label": "Read",
-                "service": "read",
-                "to": "read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete",
-                "service": "delete_data",
-                "to": "delete"
-              },
-              {
-                "id": "query",
-                "label": "Query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "save",
-                "label": "Save"
-              },
-              {
-                "id": "read",
-                "label": "Read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete"
-              },
-              {
-                "id": "query",
-                "label": "Query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "bucket_save",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_name",
-                  "type": "text",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "time",
-                  "type": "text",
-                  "label": "Time Key",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "tags",
-                  "type": "multiKeyValue",
-                  "label": "Tags",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "tag_key",
-                      "placeholder": "Tag Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "fields",
-                  "type": "multiKeyValue",
-                  "label": "Fields",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "fields": [
-                    {
-                      "name": "field_key",
-                      "placeholder": "Field Key",
-                      "validation": null
-                    }
-                  ]
-                },
-                {
-                  "name": "bucket_del",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "from_query_del",
-                  "type": "boolean",
-                  "label": "From query",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": false,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_delete",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "from_query_del",
-                  "condition": "!{parent}",
-                  "dynamicType": "text",
-                  "options": null
-                },
-                {
-                  "name": "start_delete",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_delete",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "bucket_read",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Read Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "start_read",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_read",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiStackFill",
-              "values": {
-                "bucket_save": "influx-bu",
-                "bucket_del": "influx-bu",
-                "start_delete": "1970-01-01T00:00:00Z",
-                "bucket_read": "influx-bu",
-                "start_read": "1970-01-01T00:00:00Z",
-                "debug": true
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1395,
-            "y": 568
           },
           "__class__": "Node"
         },
@@ -1838,614 +889,6 @@
           "__class__": "Node"
         },
         {
-          "id": "d6af54ab-2ba0-468a-884b-8ea73513bd58",
-          "position": {
-            "x": 1373,
-            "y": -132
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 80,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "InfluxDB",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "save",
-                "label": "Save",
-                "service": "save_data",
-                "to": "save"
-              },
-              {
-                "id": "read",
-                "label": "Read",
-                "service": "read",
-                "to": "read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete",
-                "service": "delete_data",
-                "to": "delete"
-              },
-              {
-                "id": "query",
-                "label": "Query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "save",
-                "label": "Save"
-              },
-              {
-                "id": "read",
-                "label": "Read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete"
-              },
-              {
-                "id": "query",
-                "label": "Query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "bucket_save",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "manual",
-                  "type": "boolean",
-                  "label": "Manual",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": true,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_name",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "time",
-                  "type": "dynamic",
-                  "label": "Time Key",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "tags",
-                  "type": "dynamic",
-                  "label": "Tags",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "multiKeyValue",
-                  "options": null,
-                  "fields": [
-                    {
-                      "name": "tag_key",
-                      "placeholder": "Tag Key",
-                      "validation": null
-                    }
-                  ],
-                  "url": null
-                },
-                {
-                  "name": "fields",
-                  "type": "dynamic",
-                  "label": "Fields",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "multiKeyValue",
-                  "options": null,
-                  "fields": [
-                    {
-                      "name": "field_key",
-                      "placeholder": "Field Key",
-                      "validation": null
-                    }
-                  ],
-                  "url": null
-                },
-                {
-                  "name": "bucket_del",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "from_query_del",
-                  "type": "boolean",
-                  "label": "From query",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": false,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_delete",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "from_query_del",
-                  "condition": "!{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "start_delete",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_delete",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "bucket_read",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Read Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "start_read",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_read",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiStackFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "bucket_save": "influx-bu",
-                "manual": true,
-                "bucket_del": "influx-bu",
-                "from_query_del": false,
-                "start_delete": "1970-01-01T00:00:00Z",
-                "stop_delete": "",
-                "bucket_read": "influx-bu",
-                "start_read": "1970-01-01T00:00:00Z",
-                "stop_read": "",
-                "measurement_delete": "",
-                "measurement_name": "fake_data",
-                "time": "orario",
-                "tags": [
-                  {
-                    "tag_key": "Linea",
-                    "id": "c4347bac-f147-41b4-b48c-03a494e5413d"
-                  },
-                  {
-                    "tag_key": "Traliccio",
-                    "id": "e173b619-5f40-4e8f-9549-5b583a66c244"
-                  }
-                ],
-                "fields": [
-                  {
-                    "field_key": "valore",
-                    "id": "14f66e7c-3133-47c4-aae7-7e7bf7b3d55f"
-                  }
-                ]
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1373,
-            "y": -132
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "d3b24ad8-3313-41d1-a560-8df58ff61b32",
-          "position": {
-            "x": 2397,
-            "y": -141
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "InfluxDB",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "save",
-                "label": "Save",
-                "service": "save_data",
-                "to": "save"
-              },
-              {
-                "id": "read",
-                "label": "Read",
-                "service": "read",
-                "to": "read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete",
-                "service": "delete_data",
-                "to": "delete"
-              },
-              {
-                "id": "query",
-                "label": "Query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "save",
-                "label": "Save"
-              },
-              {
-                "id": "read",
-                "label": "Read"
-              },
-              {
-                "id": "delete",
-                "label": "Delete"
-              },
-              {
-                "id": "query",
-                "label": "Query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "bucket_save",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "manual",
-                  "type": "boolean",
-                  "label": "Manual",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": true,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_name",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "time",
-                  "type": "dynamic",
-                  "label": "Time Key",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "tags",
-                  "type": "dynamic",
-                  "label": "Tags",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "multiKeyValue",
-                  "options": null,
-                  "fields": [
-                    {
-                      "name": "tag_key",
-                      "placeholder": "Tag Key",
-                      "validation": null
-                    }
-                  ],
-                  "url": null
-                },
-                {
-                  "name": "fields",
-                  "type": "dynamic",
-                  "label": "Fields",
-                  "helper": "",
-                  "group": "Save Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "manual",
-                  "condition": "{parent}",
-                  "dynamicType": "multiKeyValue",
-                  "options": null,
-                  "fields": [
-                    {
-                      "name": "field_key",
-                      "placeholder": "Field Key",
-                      "validation": null
-                    }
-                  ],
-                  "url": null
-                },
-                {
-                  "name": "bucket_del",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "from_query_del",
-                  "type": "boolean",
-                  "label": "From query",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": false,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "measurement_delete",
-                  "type": "dynamic",
-                  "label": "Measurement Name",
-                  "helper": "",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "parent": "from_query_del",
-                  "condition": "!{parent}",
-                  "dynamicType": "text",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "start_delete",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_delete",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for deleting your data",
-                  "group": "Delete Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "bucket_read",
-                  "type": "text",
-                  "label": "Bucket Name",
-                  "helper": "",
-                  "group": "Read Parameters",
-                  "value": "influx-bu",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "start_read",
-                  "type": "text",
-                  "label": "Start",
-                  "helper": "Define the starting time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": "1970-01-01T00:00:00Z",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "stop_read",
-                  "type": "text",
-                  "label": "Stop",
-                  "helper": "Define the stopping time to consider for reading your data",
-                  "group": "Read Parameters",
-                  "value": null,
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiStackFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "bucket_save": "influx-bu",
-                "manual": false,
-                "bucket_del": "influx-bu",
-                "from_query_del": false,
-                "start_delete": "1970-01-01T00:00:00Z",
-                "stop_delete": "",
-                "bucket_read": "influx-bu",
-                "start_read": "1970-01-01T00:00:00Z",
-                "stop_read": "",
-                "measurement_delete": ""
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 2397,
-            "y": -141
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "7d8797a0-5983-485e-92cf-41743696d4a4",
           "position": {
             "x": 2037,
@@ -2543,7 +986,8 @@
             "inputs": [
               {
                 "id": "input",
-                "label": "input"
+                "label": "input",
+                "closed": false
               }
             ],
             "outputs": [
@@ -2604,10 +1048,103 @@
           "__class__": "Node"
         },
         {
-          "id": "79c79b19-c73e-4092-9cbf-9fd4a883c941",
+          "id": "74b1da0b-9da3-42c9-a4ef-640a2715c031",
           "position": {
-            "x": 1225,
-            "y": 107
+            "x": 949,
+            "y": 560
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 949,
+            "y": 560
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "0b4b7a26-34c7-44dd-b725-8de39c7757c0",
+          "position": {
+            "x": 1360,
+            "y": -144
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2620,7 +1157,7 @@
           "data": {
             "name": "InfluxDB",
             "events": null,
-            "description": "",
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
             "inputs": [
               {
                 "id": "save",
@@ -2695,7 +1232,9 @@
                   "group": "Save Parameters",
                   "value": "influx-bu",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 },
                 {
                   "name": "manual",
@@ -2791,7 +1330,9 @@
                   "group": "Delete Parameters",
                   "value": "influx-bu",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 },
                 {
                   "name": "from_query_del",
@@ -2847,7 +1388,9 @@
                   "group": "Read Parameters",
                   "value": "influx-bu",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 },
                 {
                   "name": "measurement_read",
@@ -2893,7 +1436,1590 @@
                 "start_delete": "1970-01-01T00:00:00Z",
                 "stop_delete": "",
                 "bucket_read": "influx-bu",
-                "measurement_read": "fake_data",
+                "measurement_read": "",
+                "start_read": "1970-01-01T00:00:00Z",
+                "stop_read": "",
+                "measurement_name": "fake_data",
+                "time": "orario",
+                "measurement_delete": "",
+                "tags": [
+                  {
+                    "tag_key": "Linea",
+                    "id": "f3ce9f64-1aab-4226-8f10-ca151f141274"
+                  },
+                  {
+                    "tag_key": "Traliccio",
+                    "id": "923e5d37-4561-4862-bec6-e71218661d42"
+                  }
+                ],
+                "fields": [
+                  {
+                    "field_key": "valore",
+                    "id": "cfe28ae4-801d-46c1-b471-c55b25c61896"
+                  }
+                ]
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1360,
+            "y": -144
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "4d9b2e74-7d73-43de-9314-8371c21e50ec",
+          "position": {
+            "x": 2414.6559999999995,
+            "y": -144.75199999999995
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "read",
+                "label": "Read",
+                "service": "read",
+                "to": "read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "delete_data",
+                "to": "delete"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "read",
+                "label": "Read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "bucket_save",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "manual",
+                  "type": "boolean",
+                  "label": "Manual",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": true,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "time",
+                  "type": "dynamic",
+                  "label": "Time Key",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "tags",
+                  "type": "dynamic",
+                  "label": "Tags",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tag Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "fields",
+                  "type": "dynamic",
+                  "label": "Fields",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "bucket_del",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "from_query_del",
+                  "type": "boolean",
+                  "label": "From query",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": false,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_delete",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "from_query_del",
+                  "condition": "!{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "start_delete",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_delete",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "bucket_read",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "measurement_read",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "start_read",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_read",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "bucket_save": "influx-bu",
+                "manual": false,
+                "bucket_del": "influx-bu",
+                "from_query_del": false,
+                "start_delete": "1970-01-01T00:00:00Z",
+                "stop_delete": "",
+                "bucket_read": "influx-bu",
+                "measurement_read": "",
+                "start_read": "1970-01-01T00:00:00Z",
+                "stop_read": "",
+                "measurement_delete": ""
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 2414.6559999999995,
+            "y": -144.75199999999995
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "57d312ad-6e92-4c4f-8849-0718f68ab681",
+          "position": {
+            "x": 1226.3340000000003,
+            "y": 107.43999999999997
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "read",
+                "label": "Read",
+                "service": "read",
+                "to": "read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "delete_data",
+                "to": "delete"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "read",
+                "label": "Read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "bucket_save",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "manual",
+                  "type": "boolean",
+                  "label": "Manual",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": true,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "time",
+                  "type": "dynamic",
+                  "label": "Time Key",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "tags",
+                  "type": "dynamic",
+                  "label": "Tags",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tag Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "fields",
+                  "type": "dynamic",
+                  "label": "Fields",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "bucket_del",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "from_query_del",
+                  "type": "boolean",
+                  "label": "From query",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": false,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_delete",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "from_query_del",
+                  "condition": "!{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "start_delete",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_delete",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "bucket_read",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "measurement_read",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "start_read",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_read",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "bucket_save": "influx-bu",
+                "manual": true,
+                "bucket_del": "influx-bu",
+                "from_query_del": false,
+                "start_delete": "1970-01-01T00:00:00Z",
+                "stop_delete": "",
+                "bucket_read": "influx-bu",
+                "measurement_read": "sensor",
+                "start_read": "2018-04-01T00:00:00Z",
+                "stop_read": "2018-04-02T00:00:00Z",
+                "measurement_name": "",
+                "time": "",
+                "measurement_delete": ""
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1226.3340000000003,
+            "y": 107.43999999999997
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "1b9c345d-ec22-4cd2-9fcb-bbf81dc6332f",
+          "position": {
+            "x": 1177.0860000000002,
+            "y": 338.1279999999999
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "read",
+                "label": "Read",
+                "service": "read",
+                "to": "read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "delete_data",
+                "to": "delete"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "read",
+                "label": "Read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "bucket_save",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "manual",
+                  "type": "boolean",
+                  "label": "Manual",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": true,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "time",
+                  "type": "dynamic",
+                  "label": "Time Key",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "tags",
+                  "type": "dynamic",
+                  "label": "Tags",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tag Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "fields",
+                  "type": "dynamic",
+                  "label": "Fields",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "bucket_del",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "from_query_del",
+                  "type": "boolean",
+                  "label": "From query",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": false,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_delete",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "from_query_del",
+                  "condition": "!{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "start_delete",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_delete",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "bucket_read",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "measurement_read",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "start_read",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_read",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "bucket_save": "influx-bu",
+                "manual": true,
+                "bucket_del": "influx-bu",
+                "from_query_del": false,
+                "start_delete": "1970-01-01T00:00:00Z",
+                "stop_delete": "",
+                "bucket_read": "influx-bu",
+                "measurement_read": "",
+                "start_read": "1970-01-01T00:00:00Z",
+                "stop_read": "",
+                "measurement_name": "",
+                "time": "",
+                "measurement_delete": "fake_data"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1177.0860000000002,
+            "y": 338.1279999999999
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "70fd4c6c-a21d-4f01-8067-ee153abf2b32",
+          "position": {
+            "x": 1634.1420000000003,
+            "y": 336.3999999999999
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 80,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "read",
+                "label": "Read",
+                "service": "read",
+                "to": "read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "delete_data",
+                "to": "delete"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "read",
+                "label": "Read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "bucket_save",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "manual",
+                  "type": "boolean",
+                  "label": "Manual",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": true,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "time",
+                  "type": "dynamic",
+                  "label": "Time Key",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "tags",
+                  "type": "dynamic",
+                  "label": "Tags",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tag Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "fields",
+                  "type": "dynamic",
+                  "label": "Fields",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "bucket_del",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "from_query_del",
+                  "type": "boolean",
+                  "label": "From query",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": false,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_delete",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "from_query_del",
+                  "condition": "!{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "start_delete",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_delete",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "bucket_read",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "measurement_read",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "start_read",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_read",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "bucket_save": "influx-bu",
+                "manual": true,
+                "bucket_del": "influx-bu",
+                "from_query_del": true,
+                "start_delete": "1970-01-01T00:00:00Z",
+                "stop_delete": "",
+                "bucket_read": "influx-bu",
+                "measurement_read": "",
+                "start_read": "1970-01-01T00:00:00Z",
+                "stop_read": "",
+                "measurement_name": "",
+                "time": ""
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1634.1420000000003,
+            "y": 336.3999999999999
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "d0916829-b6c6-43e3-84b1-f5d15eb2d0fa",
+          "position": {
+            "x": 1368.8940000000002,
+            "y": 554.1279999999998
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 80,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "InfluxDB",
+            "events": null,
+            "description": "### Description\nInfluxDB component allows you to save, read, delete and query data from the DB directly in the Loko flow.\n\n### Configuration\n\nThe block's configuration is divided in 3 sections: *Save Parameters*, *Delete Parameters* and *Read Parameters*.\n\n#### Save Parameters\n\nFirst you have to set the **Bucket Name**.\n\n**Manual** parameter allows you to manually set the **Measurement Name** and the names of the keys associated to \n**Time**, **Tags** and **Fields**. If the input data already provides this information you can set **Manual** to \nFalse.\n\n#### Delete Parameters\n\nYou have to set the **Bucket Name** and the time range: **Start** and **Stop**. \n\nIf you set **From query** to False, you can delete all data saved with a given **Measurement Name**. Otherwise, you can \nprovide a custom query as the input of the block.\n\n#### Read Parameters\n\nIn order to read data from your DB you have to provide the **Bucket Name**, **Measurement Name** and the time range: \n**Start** and **Stop**.\n \n### Input\n\n**Save** input requires a list of dictionaries. If you manually set **Time**, **Tags** and **Fields** you can simply \npass the rows of your data. Otherwise, you have to map your data:\n```json\n[   {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.405382,\"sensor_01\":50.0868,\"sensor_02\":51.25868,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:20:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.4004630000000002,\"sensor_01\":50,\"sensor_02\":51.30208,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:21:00\"\n    },\n    {\"measurement\":\"sensor\",\n    \"tags\":{\"machine_status\":\"NORMAL\"},\n    \"fields\":{\"sensor_00\":2.406366,\"sensor_01\":50,\"sensor_02\":51.3020820617676,\"sensor_03\":44.2274284362793},\n    \"time\":\"2018-08-17 21:22:00\"\n    },\n]\n```\n\n**Read** doesn't require specific input.\n\n**Delete** input requires a query if parameter **From query** is set to True. \n\nExample:  \n\n```json\n_measurement=\"sensor\"\n```\n\n**Query** input requires the string of the query.\n\nExample:  \n\n```json\nfrom(bucket:\"influx-bu\") |> range(start: 1970-01-01T00:00:00Z, stop: 2022-10-24T08:00:00Z) |> filter(fn: (r) => r._measurement == \"sensor\")\n```\n\n",
+            "inputs": [
+              {
+                "id": "save",
+                "label": "Save",
+                "service": "save_data",
+                "to": "save"
+              },
+              {
+                "id": "read",
+                "label": "Read",
+                "service": "read",
+                "to": "read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "service": "delete_data",
+                "to": "delete"
+              },
+              {
+                "id": "query",
+                "label": "Query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "save",
+                "label": "Save"
+              },
+              {
+                "id": "read",
+                "label": "Read"
+              },
+              {
+                "id": "delete",
+                "label": "Delete"
+              },
+              {
+                "id": "query",
+                "label": "Query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "bucket_save",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "manual",
+                  "type": "boolean",
+                  "label": "Manual",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": true,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_name",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "time",
+                  "type": "dynamic",
+                  "label": "Time Key",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "tags",
+                  "type": "dynamic",
+                  "label": "Tags",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "tag_key",
+                      "placeholder": "Tag Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "fields",
+                  "type": "dynamic",
+                  "label": "Fields",
+                  "helper": "",
+                  "group": "Save Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "manual",
+                  "condition": "{parent}",
+                  "dynamicType": "multiKeyValue",
+                  "options": null,
+                  "fields": [
+                    {
+                      "name": "field_key",
+                      "placeholder": "Field Key",
+                      "validation": null
+                    }
+                  ],
+                  "url": null
+                },
+                {
+                  "name": "bucket_del",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "from_query_del",
+                  "type": "boolean",
+                  "label": "From query",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": false,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "measurement_delete",
+                  "type": "dynamic",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "from_query_del",
+                  "condition": "!{parent}",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "start_delete",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_delete",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for deleting your data",
+                  "group": "Delete Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "bucket_read",
+                  "type": "text",
+                  "label": "Bucket Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": "influx-bu",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "measurement_read",
+                  "type": "text",
+                  "label": "Measurement Name",
+                  "helper": "",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "start_read",
+                  "type": "text",
+                  "label": "Start",
+                  "helper": "Define the starting time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": "1970-01-01T00:00:00Z",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "stop_read",
+                  "type": "text",
+                  "label": "Stop",
+                  "helper": "Define the stopping time to consider for reading your data",
+                  "group": "Read Parameters",
+                  "value": null,
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiStackFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "bucket_save": "influx-bu",
+                "manual": true,
+                "bucket_del": "influx-bu",
+                "from_query_del": false,
+                "start_delete": "1970-01-01T00:00:00Z",
+                "stop_delete": "",
+                "bucket_read": "influx-bu",
+                "measurement_read": "",
                 "start_read": "1970-01-01T00:00:00Z",
                 "stop_read": "",
                 "measurement_name": "",
@@ -2906,8 +3032,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1225,
-            "y": 107
+            "x": 1368.8940000000002,
+            "y": 554.1279999999998
           },
           "__class__": "Node"
         }
@@ -2928,76 +3054,6 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-56d0ebfc-963c-41fd-90c1-419829d55a59output-0a11bda7-fc6d-4649-a6eb-d3543d33dcd8input",
-          "source": "56d0ebfc-963c-41fd-90c1-419829d55a59",
-          "sourceHandle": "output",
-          "target": "0a11bda7-fc6d-4649-a6eb-d3543d33dcd8",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-0b0d3081-1e1f-406f-b56d-65e5933c5ddcoutput-d0ec7c81-8c15-48f2-99e9-3c9fff920e3cdelete",
-          "source": "0b0d3081-1e1f-406f-b56d-65e5933c5ddc",
-          "sourceHandle": "output",
-          "target": "d0ec7c81-8c15-48f2-99e9-3c9fff920e3c",
-          "targetHandle": "delete",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-28932479-4bae-4255-b74a-bca07f4b9deeoutput-35435eae-329c-42ed-9333-58aaa3f4f9e9delete",
-          "source": "28932479-4bae-4255-b74a-bca07f4b9dee",
-          "sourceHandle": "output",
-          "target": "35435eae-329c-42ed-9333-58aaa3f4f9e9",
-          "targetHandle": "delete",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-0a11bda7-fc6d-4649-a6eb-d3543d33dcd8output-0ff5824b-f7d7-4faa-ba2b-cf449636eb06query",
-          "source": "0a11bda7-fc6d-4649-a6eb-d3543d33dcd8",
-          "sourceHandle": "output",
-          "target": "0ff5824b-f7d7-4faa-ba2b-cf449636eb06",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-0ff5824b-f7d7-4faa-ba2b-cf449636eb06query-73c15504-172b-4284-ac1a-822aa19aeadainput",
-          "source": "0ff5824b-f7d7-4faa-ba2b-cf449636eb06",
-          "sourceHandle": "query",
-          "target": "73c15504-172b-4284-ac1a-822aa19aeada",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
           "id": "reactflow__edge-b8f5b458-a66d-414d-ada0-32019d0e55cfoutput-2cc97caa-b3a0-44cf-acef-b6c62b5e16f9input",
           "source": "b8f5b458-a66d-414d-ada0-32019d0e55cf",
           "sourceHandle": "output",
@@ -3006,20 +3062,6 @@
           "data": {
             "startColor": "#F8637A",
             "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-7ad6908c-2926-4b13-a9d5-c57893159358output-d6af54ab-2ba0-468a-884b-8ea73513bd58save",
-          "source": "7ad6908c-2926-4b13-a9d5-c57893159358",
-          "sourceHandle": "output",
-          "target": "d6af54ab-2ba0-468a-884b-8ea73513bd58",
-          "targetHandle": "save",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
           },
           "selected": false,
           "dragging": false,
@@ -3054,10 +3096,38 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-4eb76c17-6b4d-47ee-8674-fcfa56869e1boutput-d3b24ad8-3313-41d1-a560-8df58ff61b32save",
+          "id": "reactflow__edge-74b1da0b-9da3-42c9-a4ef-640a2715c031output-0a11bda7-fc6d-4649-a6eb-d3543d33dcd8input",
+          "source": "74b1da0b-9da3-42c9-a4ef-640a2715c031",
+          "sourceHandle": "output",
+          "target": "0a11bda7-fc6d-4649-a6eb-d3543d33dcd8",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-7ad6908c-2926-4b13-a9d5-c57893159358output-0b4b7a26-34c7-44dd-b725-8de39c7757c0save",
+          "source": "7ad6908c-2926-4b13-a9d5-c57893159358",
+          "sourceHandle": "output",
+          "target": "0b4b7a26-34c7-44dd-b725-8de39c7757c0",
+          "targetHandle": "save",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-4eb76c17-6b4d-47ee-8674-fcfa56869e1boutput-4d9b2e74-7d73-43de-9314-8371c21e50ecsave",
           "source": "4eb76c17-6b4d-47ee-8674-fcfa56869e1b",
           "sourceHandle": "output",
-          "target": "d3b24ad8-3313-41d1-a560-8df58ff61b32",
+          "target": "4d9b2e74-7d73-43de-9314-8371c21e50ec",
           "targetHandle": "save",
           "data": {
             "startColor": "#FA804C",
@@ -3068,11 +3138,53 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-d08bb476-31b1-4464-bb42-94a1f9679811output-79c79b19-c73e-4092-9cbf-9fd4a883c941read",
+          "id": "reactflow__edge-d08bb476-31b1-4464-bb42-94a1f9679811output-57d312ad-6e92-4c4f-8849-0718f68ab681read",
           "source": "d08bb476-31b1-4464-bb42-94a1f9679811",
           "sourceHandle": "output",
-          "target": "79c79b19-c73e-4092-9cbf-9fd4a883c941",
+          "target": "57d312ad-6e92-4c4f-8849-0718f68ab681",
           "targetHandle": "read",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-0b0d3081-1e1f-406f-b56d-65e5933c5ddcoutput-1b9c345d-ec22-4cd2-9fcb-bbf81dc6332fdelete",
+          "source": "0b0d3081-1e1f-406f-b56d-65e5933c5ddc",
+          "sourceHandle": "output",
+          "target": "1b9c345d-ec22-4cd2-9fcb-bbf81dc6332f",
+          "targetHandle": "delete",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-28932479-4bae-4255-b74a-bca07f4b9deeoutput-70fd4c6c-a21d-4f01-8067-ee153abf2b32delete",
+          "source": "28932479-4bae-4255-b74a-bca07f4b9dee",
+          "sourceHandle": "output",
+          "target": "70fd4c6c-a21d-4f01-8067-ee153abf2b32",
+          "targetHandle": "delete",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-0a11bda7-fc6d-4649-a6eb-d3543d33dcd8output-d0916829-b6c6-43e3-84b1-f5d15eb2d0faquery",
+          "source": "0a11bda7-fc6d-4649-a6eb-d3543d33dcd8",
+          "sourceHandle": "output",
+          "target": "d0916829-b6c6-43e3-84b1-f5d15eb2d0fa",
+          "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
             "stopColor": "#888"
